@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 680" width="920" height="680">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#222"/>
+    </marker>
+    <marker id="arrow-dash" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666"/>
+    </marker>
+  </defs>
+  <rect width="920" height="680" fill="#ffffff"/>
+
+  <text x="460" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="700" fill="#111">
+    System architecture: touchless hand-controlled games
+  </text>
+
+  <!-- Hardware -->
+  <rect x="24" y="52" width="872" height="132" fill="#f4f4f4" stroke="#222" stroke-width="2" rx="10"/>
+  <text x="460" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#111">
+    Hardware (user machine)
+  </text>
+
+  <rect x="48" y="96" width="140" height="72" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="118" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Webcam</text>
+  <text x="118" y="148" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#444">video in</text>
+
+  <rect x="732" y="96" width="140" height="72" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="802" y="128" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">Display</text>
+  <text x="802" y="148" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#444">video out</text>
+
+  <!-- Laptop -->
+  <rect x="24" y="210" width="872" height="448" fill="#eef5ff" stroke="#222" stroke-width="2" rx="10"/>
+  <text x="460" y="238" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#111">
+    Laptop (AI and game application)
+  </text>
+
+  <rect x="320" y="258" width="280" height="44" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="460" y="276" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Frame capture (OpenCV)</text>
+  <text x="460" y="292" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#444">VideoCapture, 640x480</text>
+
+  <rect x="320" y="318" width="280" height="44" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="460" y="336" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Hand landmark detection</text>
+  <text x="460" y="352" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#444">MediaPipe Hands</text>
+
+  <rect x="320" y="378" width="280" height="44" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="460" y="396" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Tracking and adaptive smoothing</text>
+  <text x="460" y="412" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#444">Hand_Tracker</text>
+
+  <rect x="320" y="438" width="280" height="44" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="460" y="456" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Landmark to screen mapping</text>
+  <text x="460" y="472" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#444">normalized to game (x, y)</text>
+
+  <rect x="320" y="498" width="280" height="44" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="460" y="516" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Scene manager and menu flow</text>
+  <text x="460" y="532" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#444">SceneManager, intro to hub</text>
+
+  <rect x="320" y="558" width="280" height="44" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="460" y="576" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Game logic (maze / fruit slicing)</text>
+  <text x="460" y="592" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#444">dispatcher, run_maze / run_fruit</text>
+
+  <rect x="320" y="618" width="280" height="36" fill="#ffffff" stroke="#222" stroke-width="1.5" rx="4"/>
+  <text x="460" y="640" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600">Pygame render and compositing</text>
+
+  <!-- Optional (dashed), like LiDAR branch in reference -->
+  <rect x="640" y="318" width="220" height="104" fill="#fafafa" stroke="#666" stroke-width="1.5" stroke-dasharray="6 4" rx="4"/>
+  <text x="750" y="342" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#444">Optional (future)</text>
+  <text x="750" y="362" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#555">Depth / stereo / second camera</text>
+  <text x="750" y="382" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#555">Multi-hand control</text>
+  <text x="750" y="408" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" fill="#777">(not in current build)</text>
+
+  <line x1="460" y1="302" x2="460" y2="318" stroke="#222" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="460" y1="362" x2="460" y2="378" stroke="#222" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="460" y1="422" x2="460" y2="438" stroke="#222" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="460" y1="482" x2="460" y2="498" stroke="#222" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="460" y1="542" x2="460" y2="558" stroke="#222" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="460" y1="602" x2="460" y2="618" stroke="#222" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <text x="472" y="314" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">raw frames</text>
+  <text x="472" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">landmarks</text>
+  <text x="472" y="434" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">smooth tip pos.</text>
+  <text x="472" y="494" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">cursor input</text>
+  <text x="472" y="554" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">launch / state</text>
+  <text x="472" y="614" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#333">sprites, HUD, collisions</text>
+
+  <path d="M 118 168 L 118 230 L 320 230 L 320 258" fill="none" stroke="#222" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="200" y="222" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#222">USB video frames</text>
+
+  <path d="M 460 654 L 460 185 L 802 185 L 802 168" fill="none" stroke="#222" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="520" y="178" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" fill="#222">framebuffer to monitor</text>
+
+  <path d="M 640 370 L 600 370 L 600 460" fill="none" stroke="#666" stroke-width="1.2" stroke-dasharray="6 4" marker-end="url(#arrow-dash)"/>
+  <text x="612" y="362" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" fill="#666">future fusion</text>
+
+  <text x="48" y="668" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#555">Solid: implemented path. Dashed: planned extensions (similar to optional sensor path in IoT reference diagrams).</text>
+</svg>
